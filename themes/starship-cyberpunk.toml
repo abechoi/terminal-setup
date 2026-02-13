@@ -1,0 +1,112 @@
+# ═══════════════════════════════════════════════════
+#   ⚡  C Y B E R P U N K   2 0 7 7
+#   neon grid · chrome · night city
+# ═══════════════════════════════════════════════════
+
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$python\
+$rust\
+$golang\
+$docker_context\
+$package\
+$fill\
+$cmd_duration\
+$time\
+$line_break\
+$character"""
+
+[character]
+success_symbol = "[⟫](bold #FCFA2B)"
+error_symbol = "[✘](bold #FF175C)"
+vimcmd_symbol = "[⟫](bold #00FF81)"
+
+[directory]
+style = "bold #06B2F7"
+format = "[⟦ $path ⟧]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "DOC"
+"Downloads" = "DWN"
+"Projects"  = "PRJ"
+"Desktop"   = "DSK"
+
+[git_branch]
+symbol = "⎇ "
+style = "bold #FCFA2B"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "#CD00FF"
+format = '([$all_status$ahead_behind]($style) )'
+ahead = "▲${count}"
+behind = "▼${count}"
+conflicted = "⚡"
+deleted = "✕"
+modified = "Δ"
+renamed = "»"
+staged = "◉"
+stashed = "≡"
+untracked = "?"
+
+[nodejs]
+symbol = " "
+style = "#00FF81"
+format = "[$symbol($version)]($style) "
+
+[python]
+symbol = " "
+style = "#FCFA2B"
+format = "[$symbol($version)]($style) "
+
+[rust]
+symbol = " "
+style = "#FF175C"
+format = "[$symbol($version)]($style) "
+
+[golang]
+symbol = " "
+style = "#06B2F7"
+format = "[$symbol($version)]($style) "
+
+[docker_context]
+symbol = " "
+style = "#00E2E0"
+format = "[$symbol$context]($style) "
+
+[package]
+symbol = "⬡ "
+style = "#CD00FF"
+format = "[$symbol$version]($style) "
+
+[cmd_duration]
+min_time = 2_000
+style = "#443F5A"
+format = "[⧖ $duration]($style)"
+
+[time]
+disabled = false
+style = "#443F5A"
+format = "[ $time]($style)"
+time_format = "%H:%M"
+
+[fill]
+symbol = " "
+
+[username]
+style_user = "#FCFA2B"
+style_root = "bold #FF175C"
+format = "[$user]($style) "
+show_always = false
+
+[hostname]
+style = "#06B2F7"
+format = "[@$hostname]($style) "
+ssh_only = true
